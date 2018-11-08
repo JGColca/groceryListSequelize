@@ -1,0 +1,31 @@
+<html>
+<head></head>
+<body>
+
+  <div>
+    <a href="/shoppinglists">View All Lists</a>
+    <a href="/shoppinglists/new">Add New List</a>
+  </div>
+
+  <h1>Lists</h1>
+  <ul>
+  {{#shoppinglists}}
+
+  <li>
+    <div>List Name: {{name}}</div>
+    <div>Street: {{street}} </div>
+    <div>City: {{city}}</div>
+    <div>State: {{state}}</div>
+    <form action="/delete-list" method="POST">
+      <input type="hidden" name="listId" value="{{id}}" />
+      <div><input type="submit" value="Remove"/>
+    </form>
+    <a href="/shoppinglists/update/{{id}}">Update</a>
+  </li>
+
+  {{/shoppinglists}}
+</ul>
+
+
+</body>
+</html>

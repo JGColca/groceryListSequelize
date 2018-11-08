@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+
+  <h1>Update List</h1>
+
+  <div>
+    <a href="/shoppinglists">View All Lists</a>
+    <a href="/shoppinglists/new">Add New List</a>
+  </div>
+ 
+
+
+    
+
+ {{#shoppinglists}}
+  <form action="/update-list" method="POST">
+        <input type="hidden" name = "listId" value="{{id}}" />
+        <input type="text" name ="listName" value="{{name}}" />
+        <input type="text" name = "street" value="{{street}}" />
+        <input type="text" name = "city" value="{{city}}" />
+        <input type="text" name = "state" value="{{state}}" />
+        <input type="submit" value="Submit" />
+  </form>
+{{/shoppinglists}}
+</body>
+</html>
